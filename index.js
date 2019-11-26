@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 const MongoClient = require('mongodb').MongoClient;
@@ -33,6 +34,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRouts')(app);
 
 if (process.env.NODE_ENV === 'production'){
   // Express will serve up production assets like our main.js file, or our main.css file
