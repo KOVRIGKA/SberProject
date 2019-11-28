@@ -8,17 +8,17 @@ require('./models/User');
 require('./models/Survey');
 require('./services/passport');
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://user1:X6KSHb8IxhEWBABx@emaily-4t8od.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://user1:X6KSHb8IxhEWBABx@emaily-4t8od.mongodb.net/test?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 
-//mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
